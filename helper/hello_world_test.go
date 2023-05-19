@@ -3,14 +3,14 @@ package helper
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestHelloWorld(t *testing.T) {
 	result := HellowWorld("Tangguh")
 
-	if result != "Hello Tangguh" {
-		//unit test failed
-		t.Fail()
-	}
-	fmt.Println("TestHelloWorld Done")
+	assert.Equal(t, "Hello Tangguh", result)
+
+	fmt.Println("Executed")
 }
