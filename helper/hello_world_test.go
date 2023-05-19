@@ -14,3 +14,11 @@ func TestHelloWorld(t *testing.T) {
 
 	fmt.Println("Executed")
 }
+
+func TestMain(m *testing.M) {
+	fmt.Println("sebelum")
+
+	m.Run()
+
+	fmt.Println("Setelah")
+}
