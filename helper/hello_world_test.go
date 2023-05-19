@@ -10,6 +10,13 @@ import (
 func TestHelloWorld(t *testing.T) {
 	result := HellowWorld("Tangguh")
 
+	t.Run("Riyadi", func(t *testing.T) {
+		result := HellowWorld("Riyadi")
+		if result != "Hello Riyadi" {
+			t.Error("NAHLO")
+		}
+	})
+
 	assert.Equal(t, "Hello Tangguh", result)
 
 	fmt.Println("Executed")
