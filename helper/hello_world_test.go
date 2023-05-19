@@ -28,3 +28,34 @@ func TestMain(m *testing.M) {
 
 	fmt.Println("Setelah")
 }
+
+func TestTable(t *testing.T) {
+	tests := []struct {
+		name     string
+		request  string
+		expected string
+	}{
+		{
+			name:     "HelloWorld(Muhammad)",
+			request:  "Muhammad",
+			expected: "Hello Muhammad",
+		},
+		{
+			name:     "HelloWorld(Tangguh)",
+			request:  "Tangguh",
+			expected: "Hello Tangguh",
+		},
+		{
+			name:     "HelloWorld(Riyadi)",
+			request:  "Riyadi",
+			expected: "Hello Riyadi",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			result := HellowWorld(test.request)
+			assert.Equal(t, test.expected, result)
+		})
+	}
+}
